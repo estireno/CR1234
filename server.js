@@ -1,14 +1,11 @@
-//starting server
-const http = require("http")
+class detector {
+    constructor(type, model, component) {
+        this.type = type;
+        this.model = model;
+        this.component = component;
+    }
+}
 
-let server = http.createServer((reg, res) => {
-    res.writeHead(200, {"Content-Type": 'text/plain; charset=utf8'})
-    res.end('Hello')
-})
+var Detcon = new detector('IR 700', 'Detcon', 'Methane');
 
-const PORT = 3000
-const HOST = 'localhost'
-
-server.listen(PORT, HOST, () => {
-    console.log('Сервер запущен: http://' + HOST + ":" + PORT)
-})
+console.log(Detcon.type);
